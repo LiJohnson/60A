@@ -273,3 +273,7 @@ body.attachment div#comments{clear:both;}
 
 /* =hidden */
 .home .entry-meta, .page .sidebar, .category .sidebar, .archive .sidebar, .search .sidebar, #access .skip-link, .archive-meta {display:none;}
+
+
+/***************************/
+.nav .children{display: none;}
