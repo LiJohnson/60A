@@ -23,21 +23,23 @@
 
 <body class="<?php sandbox_body_class() ?>">
 
-<div id="wrapper" class="hfeed">
-
-	<div id="header">
-		<h1 id="blog-title">
+<div id="wrapper" class="container">
+	<header>
+		<h1>
 			<a href="<?php echo get_option('home') ?>/" title="<?php bloginfo('name') ?>" rel="home">
 				<?php bloginfo('name'); ?>
 			</a>
 		</h1>
-		<div id="blog-description"><?php bloginfo('description') ?></div>
-	</div><!--  #header -->
+		<div>
+			<p style="text-align: right;" ><?php bloginfo('description') ?></p>
+		</div>
+	</header>
 
-	<header class="navbar navbar-static-top bs-docs-nav" >
-
-		<?php
-			$page = wp_nav_menu( array("echo"=>false,"depth"=>2 , "menu_class"=>"nav","container_class"=>"abs"));
-			echo "$page";
+	<?php
+		$page = wp_nav_menu( array("echo"=>!false,"depth"=>2 , "menu_class"=>"navbar navbar-static-top bs-docs-nav", "container"=>"nav" ,"container_class"=>"navbar navbar-static-top bs-docs-nav"));
+		//echo "$page";
 		?>
-	</header><!-- #nav -->
+	<nav class="" >
+
+		
+	</nav>
