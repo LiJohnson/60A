@@ -19,6 +19,19 @@
 
 <?php wp_enqueue_script( array('jquery'));wp_head() ?>
 
+<script>
+(function($){
+	$(function(){
+		$("ul.nav > li").each(function(){
+			var $li , $subMenu ;
+			$li = $(this);
+			$subMenu = $li.find("ul");
+			
+		});
+	});
+})(window.jQuery);
+</script>
+
 </head>
 
 <body class="<?php sandbox_body_class() ?>">
@@ -36,10 +49,14 @@
 	</header>
 
 	<?php
-		$page = wp_nav_menu( array("echo"=>!false,"depth"=>2 , "menu_class"=>"navbar navbar-static-top bs-docs-nav", "container"=>"nav" ,"container_class"=>"navbar navbar-static-top bs-docs-nav"));
-		//echo "$page";
-		?>
-	<nav class="" >
-
-		
-	</nav>
+		wp_nav_menu( array(
+			"echo"=>!false,
+			"depth"=>3 ,
+			"container"=>"nav" ,
+			"container_class"=>"collapse navbar-collapse bs-navbar-collapse animate",
+			"menu_class"=>"nav navbar-nav"
+			));
+		wp_nav_menu();
+		wp_page_menu();
+		wp_list_pages();
+		?>	
