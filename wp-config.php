@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * WordPress基础配置文件。
  *
