@@ -4,10 +4,12 @@ AOPLAN
 DONE
 -------
 - page.php
-- home.php
+- head.php
+- style.css	
+- footer.php
 
--------
 TO DO
+-------
 - 404.php
 - GPL.txt	
 - archive.php
@@ -15,7 +17,7 @@ TO DO
 - author.php
 - category.php
 - comments.php
-- footer.php
+
 - functions.php
 - home.php
 - image.php
@@ -25,5 +27,5 @@ TO DO
 - search.php
 - sidebar.php
 - single.php
-- style.css	
+
 - tag.php
