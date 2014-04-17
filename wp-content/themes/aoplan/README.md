@@ -1,4 +1,4 @@
-AOPLAN
+AOPLAN THEME FOR WORDPRESS
 ======
 
 DONE
@@ -17,7 +17,6 @@ TO DO
 - author.php
 - category.php
 - comments.php
-
 - functions.php
 - home.php
 - image.php
@@ -27,5 +26,4 @@ TO DO
 - search.php
 - sidebar.php
 - single.php
-
 - tag.php
