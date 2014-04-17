@@ -26,7 +26,9 @@
 			var $li , $subMenu ;
 			$li = $(this);
 			$subMenu = $li.find("ul");
-			
+			if(!$subMenu.length)return;
+			$subMenu.addClass("dropdown-menu");
+			$li.hover(function(){$subMenu.slideDown(100)},function(){$subMenu.hide()});
 		});
 	});
 })(window.jQuery);
@@ -50,13 +52,9 @@
 
 	<?php
 		wp_nav_menu( array(
-			"echo"=>!false,
-			"depth"=>3 ,
+			"depth"=>2,
 			"container"=>"nav" ,
 			"container_class"=>"collapse navbar-collapse bs-navbar-collapse animate",
 			"menu_class"=>"nav navbar-nav"
 			));
-		wp_nav_menu();
-		wp_page_menu();
-		wp_list_pages();
 		?>	
