@@ -36,9 +36,14 @@
  for( $i = 0; $i < $section_num ;$i++){
 
  $section_menu = onetone_options_array( 'menu_title_'.$i );
+ $section_slug = onetone_options_array( 'menu_slug_'.$i );
 
  if(isset($section_menu) && $section_menu !=""){
  $sanitize_title = sanitize_title($section_menu);
+ $section_menu = onetone_options_array( 'menu_title_'.$i );
+ if(trim($section_slug) !=""){
+	 $sanitize_title = $section_slug; 
+	 }
  $onepage_menu .= '<li id="onetone-'.$sanitize_title.'" class="onetone-menuitem"><a href="#'.$sanitize_title.'" ><span>'.$section_menu.'</span></a></li>';
  }
  }

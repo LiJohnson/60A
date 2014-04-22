@@ -25,12 +25,12 @@ function onetone_setup(){
 }
 
 add_action( 'after_setup_theme', 'onetone_setup' );
-if ( ! isset( $content_width ) ) $content_width = 720;
+if ( ! isset( $content_width ) ) $content_width = 1120;
 
  function onetone_custom_scripts(){
     wp_enqueue_style('onetone-font-awesome',  get_template_directory_uri() .'/css/font-awesome.min.css', false, '4.0.3', false);
-	wp_enqueue_style('onetone-main',  get_template_directory_uri() .'/style.css', false, '', false);
-	wp_enqueue_style('onetone-media', get_template_directory_uri().'/media.css', false, '', false);
+	wp_enqueue_style('onetone-main',  get_template_directory_uri() .'/style.css', false, '1.1.6', false);
+	wp_enqueue_style('onetone-media', get_template_directory_uri().'/media.css', false, '1.1.4', false);
 	wp_enqueue_style('Yanone-Kaffeesatz', esc_url('//fonts.googleapis.com/css?family=Yanone+Kaffeesatz|Lustria|Raleway|Open+Sans:400,300'), false, '', false );
 	
    $background_array  = onetone_options_array("page_background");
@@ -51,10 +51,10 @@ if ( ! isset( $content_width ) ) $content_width = 720;
 	
 	wp_add_inline_style( 'onetone-main', $onetone_custom_css );
 	if(is_home()){
-	wp_enqueue_script( 'onetone-animatescroll', get_template_directory_uri().'/js/jquery.smint.js', array( 'jquery' ), '', true );
-	wp_enqueue_script( 'onetone-bigvideo', get_template_directory_uri().'/js/jquery.tubular.1.0.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'onetone-animatescroll', get_template_directory_uri().'/js/jquery.smint.js', array( 'jquery' ), '2.0', true );
+	wp_enqueue_script( 'onetone-bigvideo', get_template_directory_uri().'/js/jquery.tubular.1.0.js', array( 'jquery' ), '1.0', true );
 	}
-	wp_enqueue_script( 'onetone-default', get_template_directory_uri().'/js/onetone.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'onetone-default', get_template_directory_uri().'/js/onetone.js', array( 'jquery' ), '1.1.4', true );
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ){wp_enqueue_script( 'comment-reply' );}
 	}
