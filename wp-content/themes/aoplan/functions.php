@@ -742,3 +742,10 @@ function commenter_link() {
 } // end commenter_link
 
 ?>
+
+
+
+
+<?php
+require( dirname(__file__)."/include/menu.php" );
+?>

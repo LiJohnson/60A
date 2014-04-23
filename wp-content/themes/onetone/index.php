@@ -95,7 +95,7 @@ get_header();
 		<div class="clear"></div>
      <?php 
 	 if($section_background_video != ""){
-	  echo '<p class="black-65" id="video-controls"><a class="tubular-play" href="#"><i class="fa fa-play "></i></a>&nbsp; &nbsp;&nbsp;&nbsp;<a class="tubular-pause" href="#"><i class="fa fa-pause "></i></a></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="tubular-volume-up" href="#"><i class="fa fa-volume-up "></i></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="tubular-volume-down" href="#"><i class="fa fa-volume-off "></i></a> </p>';
+	  //echo '<p class="black-65" id="video-controls"><a class="tubular-play" href="#"><i class="fa fa-play "></i></a>&nbsp; &nbsp;&nbsp;&nbsp;<a class="tubular-pause" href="#"><i class="fa fa-pause "></i></a></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="tubular-volume-up" href="#"><i class="fa fa-volume-up "></i></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="tubular-volume-down" href="#"><i class="fa fa-volume-off "></i></a> </p>';
 	 }
 	 ?>
     </section>

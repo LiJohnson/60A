@@ -12,25 +12,17 @@
 <link rel="alternate" type="application/rss+xml" href="<?php bloginfo('rss2_url') ?>" title="<?php echo wp_specialchars(get_bloginfo('name'), 1) ?> <?php _e('Posts RSS feed', 'sandbox'); ?>" />
 <link rel="alternate" type="application/rss+xml" href="<?php bloginfo('comments_rss2_url') ?>" title="<?php echo wp_specialchars(get_bloginfo('name'), 1) ?> <?php _e('Comments RSS feed', 'sandbox'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url') ?>" />
+<link rel="pingback" href="<?php echo get_template_directory_uri(); ?>/css/media.css" />
 
+<!--
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="http://1.gtbcode.sinaapp.com/css/style.css">
-
+-->
 <?php wp_enqueue_script( array('jquery'));wp_head() ?>
 
 <script>
 (function($){
-	$(function(){
-		$("ul.nav > li").each(function(){
-			var $li , $subMenu ;
-			$li = $(this);
-			$subMenu = $li.find("ul");
-			if(!$subMenu.length)return;
-			$subMenu.addClass("dropdown-menu");
-			$li.hover(function(){$subMenu.slideDown(100)},function(){$subMenu.hide()});
-		});
-	});
 })(window.jQuery);
 </script>
 
@@ -38,23 +30,21 @@
 
 <body class="<?php sandbox_body_class() ?>">
 
-<div id="wrapper" class="container">
-	<header>
-		<h1>
-			<a href="<?php echo get_option('home') ?>/" title="<?php bloginfo('name') ?>" rel="home">
-				<?php bloginfo('name'); ?>
-			</a>
-		</h1>
-		<div>
-			<p style="text-align: right;" ><?php bloginfo('description') ?></p>
-		</div>
-	</header>
-
-	<?php
+<div id="wrapper" class="home-site">
+	<header class="home-header" style="position: relative;">
+		<div class="home-logo onetone-logo">
+        	<a href="<?php echo get_option('home') ?>/" title="<?php bloginfo('name') ?>" rel="home">
+                <span class="site-name"><?php bloginfo('name'); ?> </span>
+            </a>
+        </div>
+        <a class="home-navbar navbar" href="javascript:;"></a>
+        <?php
 		wp_nav_menu( array(
-			"depth"=>2,
+			"depth"=>1,
 			"container"=>"nav" ,
-			"container_class"=>"collapse navbar-collapse bs-navbar-collapse animate",
-			"menu_class"=>"nav navbar-nav"
+			"container_class"=>"home-navigation top-nav animate",
+			"menu_class"=>"onetone-menuitem"
 			));
-		?>	
+		?>
+		<div class="clear"></div>
+	</header>
