@@ -747,10 +747,16 @@ function commenter_link() {
 
 
 <?php
-$file = 'aoplan,menu';
+require( dirname(__file__)."/include/aoplan.php" );
 
-foreach (preg_split("/,/", $file) as $value) {
-	require( dirname(__file__)."/include/$value.php" );
+if( is_admin() ){
+	$file = 'menu';
+	foreach (preg_split("/,/", $file) as $value) {
+		require( dirname(__file__)."/admin/include/$value.php" );
+	}
+}else{
+	
 }
+
 
 ?>

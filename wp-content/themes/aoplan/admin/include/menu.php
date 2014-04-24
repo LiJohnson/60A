@@ -25,8 +25,8 @@ class AoplanSetting{
 		if( !is_array($title) )$title = array();
 
 		echo '<div class=wrap >';
-		require( dirname(__file__).'/head.php' );
-		require( dirname(__file__).'/'.$file.'.php' );
+		require( dirname(__file__).'/header.php' );
+		require( dirname(__file__).'/../'.$file.'.php' );
 		echo '</div>';
 	}
 
@@ -61,8 +61,23 @@ class AoplanSetting{
 	 * @return [type] [description]
 	 */
 	public function gallery(){
-		echo "gallery";
-		return $this->outPut();
+		return $this->outPut('gallery');
+	}
+
+	/**
+	 * 关于我们页面
+	 * @return [type]
+	 */
+	public function about(){
+		return $this->outPut('about');
+	}
+
+	/**
+	 * 联系方式页面
+	 * @return [type]
+	 */
+	public function contact(){
+		return $this->outPut('contact');
 	}
 }
 
@@ -79,6 +94,10 @@ class AoplanMenu{
 	private function init(){
 		add_action( 'admin_menu', array( $this, 'product' ) );
 		add_action( 'admin_menu', array( $this, 'gallery' ) );
+		add_action( 'admin_menu', array( $this, 'about' ) );
+		add_action( 'admin_menu', array( $this, 'contact' ) );
+
+		add_action('wp_ajax_aoplanUpdateTitle', array( &$this->page , 'updateTitle' ) );
 	}
 
 	public function product(){
@@ -89,6 +108,14 @@ class AoplanMenu{
 		$this->addPage('相册','gallery');
 	}
 
+	public function about(){
+		$this->addPage("关于",'about');
+	}
+
+	public function contact(){
+		$this->addPage('联系方式','contact');
+	}
+
 
 	private function addPage( $title , $callback = false ){
 		$callback = $callback ? $callback : $title;
@@ -97,8 +124,4 @@ class AoplanMenu{
 }
 
 new AoplanMenu();
-
-$aoplanSetting = new AoplanSetting();
-add_action('wp_ajax_aoplanUpdateTitle', array(&$aoplanSetting , 'updateTitle' ) );
-
 ?>
