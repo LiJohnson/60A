@@ -747,5 +747,10 @@ function commenter_link() {
 
 
 <?php
-require( dirname(__file__)."/include/menu.php" );
+$file = 'aoplan,menu';
+
+foreach (preg_split("/,/", $file) as $value) {
+	require( dirname(__file__)."/include/$value.php" );
+}
+
 ?>
