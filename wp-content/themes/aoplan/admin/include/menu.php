@@ -116,7 +116,6 @@ class AoplanMenu{
 		$this->addPage('联系方式','contact');
 	}
 
-
 	private function addPage( $title , $callback = false ){
 		$callback = $callback ? $callback : $title;
 		add_theme_page( $title,  $title, 'edit_theme_options', $callback , array( &$this->page , $callback ) );

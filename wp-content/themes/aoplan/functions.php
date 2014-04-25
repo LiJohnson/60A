@@ -748,6 +748,7 @@ function commenter_link() {
 
 <?php
 require( dirname(__file__)."/include/aoplan.php" );
+require( dirname(__file__)."/include/aoplanHtml.php" );
 
 if( is_admin() ){
 	$file = 'menu';

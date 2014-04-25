@@ -12,8 +12,8 @@
 <link rel="alternate" type="application/rss+xml" href="<?php bloginfo('rss2_url') ?>" title="<?php echo wp_specialchars(get_bloginfo('name'), 1) ?> <?php _e('Posts RSS feed', 'sandbox'); ?>" />
 <link rel="alternate" type="application/rss+xml" href="<?php bloginfo('comments_rss2_url') ?>" title="<?php echo wp_specialchars(get_bloginfo('name'), 1) ?> <?php _e('Comments RSS feed', 'sandbox'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url') ?>" />
-<link rel="pingback" href="<?php echo get_template_directory_uri(); ?>/css/media.css" />
-
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/media.css" />
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/aoplan.css" />
 <!--
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
@@ -31,7 +31,7 @@
 <body class="<?php sandbox_body_class() ?>">
 
 <div id="wrapper" class="home-site">
-	<header class="home-header" style="position: relative;">
+	<header class="home-header">
 		<div class="home-logo onetone-logo">
         	<a href="<?php echo get_option('home') ?>/" title="<?php bloginfo('name') ?>" rel="home">
                 <span class="site-name"><?php bloginfo('name'); ?> </span>
@@ -39,12 +39,21 @@
         </div>
         <a class="home-navbar navbar" href="javascript:;"></a>
         <?php
+        global $aoplanHtml;
+        $aoplanHtml->nav();
+        /*
+        $titles = $aoplanOption->get("titles",array());
+        foreach ($titles as $title) {
+        	# code...
+        }
+        var_dump($titles);
 		wp_nav_menu( array(
 			"depth"=>1,
 			"container"=>"nav" ,
 			"container_class"=>"home-navigation top-nav animate",
 			"menu_class"=>"onetone-menuitem"
 			));
+			*/
 		?>
 		<div class="clear"></div>
 	</header>
