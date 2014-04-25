@@ -3,7 +3,7 @@
 /**
  * 后台主题页面
  */
-class AoplanSetting{
+class AoplanSetting extends AoplanController{
 	private $option;
 	public function AoplanSetting(){
 		global $aoplanOption;
@@ -15,7 +15,7 @@ class AoplanSetting{
 	 * @param  boolean $file [description]
 	 * @return [type]        [description]
 	 */
-	private function outPut($file = false){
+	private function outPut($file = false , $out = array()){
 		$name = trim($_GET['page']);
 		if(!$file)return;
 		if(!$name)return;
@@ -24,6 +24,7 @@ class AoplanSetting{
 		$title = $titles[$name];
 		if( !is_array($title) )$title = array();
 
+		$out = (object)$out;
 		echo '<div class=wrap >';
 		require( dirname(__file__).'/header.php' );
 		require( dirname(__file__).'/../'.$file.'.php' );
@@ -51,9 +52,14 @@ class AoplanSetting{
 	 * @return [type] [description]
 	 */
 	public function product (){
-		$productList = $this->option->get("productList",array());
-		
-		return $this->outPut('product');
+		$list = $this->option->get("productList",array());
+		$product = $this->getData("title,id,content,pic");
+		if( $product['title'] ){
+			var_dump($product);	
+		}
+
+
+		return $this->outPut('product' , array('list'=>$list,'product'=>$product));
 	}
 
 	/**
