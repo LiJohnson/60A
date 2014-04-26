@@ -16,9 +16,18 @@ jQuery(function($){
 	$form.find("input").change(function(){
 		save();
 	});
+
+	//product
+	var $productForm = $("form#product");
+	$productForm.find("input[type=button]").media(function(att){
+		$.log(att.attributes.url);
+		$productForm.find("input[name=pic]").val(att.attributes.url);
+		$productForm.find("img").prop("src",att.attributes.url);
+	});
+	
 });
 
-//tip
+//jquery plugin
 (function($) {
 	if (!$) return;
 	$.fn.getPosition = function() {
@@ -60,4 +69,16 @@ jQuery(function($){
 		});
 		return this;
 	};
+
+	$.fn.media = (function(){
+		var wpMedia = false;
+		return function(cb,eventType){
+			eventType = eventType || "click";
+			this.on(eventType,function(){
+				wpMedia = wp.media().open().on("select",function(e){
+					cb && cb.call(wpMedia,wpMedia.state().get('selection').first());
+				});
+			});
+		};
+	})();
 })(window.jQuery);

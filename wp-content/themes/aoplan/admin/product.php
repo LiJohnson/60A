@@ -1,21 +1,17 @@
 <div class="inside">
-	<form name="post" action="" method="post" id="quick-press" class="initial-form">
+	<form name="post" action="" method="post" id="product" class="initial-form">
 		<input type="hidden" name="id" value="<?php echo $product['id']; ?>" >
 		<div class="input-text-wrap" id="title-wrap">
-			<label class="prompt" for="title" >标题</label>
-			<input type="text" name="title" id="title" value="<?php echo $product['title']; ?>" >
+			<input type="text" name="title" id="title" value="<?php echo $out->product['title']; ?>" required placeholder="标题" >
 		</div>
 		<div class="textarea-wrap" id="description-wrap">
-			<label class="prompt" for="content" id="content-prompt-text">在想些什么？</label> 
-			<textarea name="content" id="content" class="mceEditor" rows="3" cols="15">
-				<?php echo $product['title']; ?>
-			</textarea>
+			<textarea name="content" id="content" class="mceEditor" rows="3" cols="15" required placeholder="在想些什么？"><?php echo $out->product['title']; ?></textarea>
 		</div>
 
 		<div class="input-text-wrap" id="title-wrap">
-			<label class="prompt" for="pic" >pic</label>
-			<input type="hidden" name="pic" id="pic" value="<?php echo $product['pic']; ?>" >
-			<img src="<?php echo $product['pic']; ?>" />
+			<input type="button" id="pic" class="upload-button button" value="upload"/>
+			<input type="hidden" name="pic" value="<?php echo $out->product['pic']; ?>" required />
+			<img src="<?php echo $out->product['pic']; ?>" />
 		</div>
 
 		<p class="submit">
@@ -25,9 +21,9 @@
 	</form>
 </div>
 <?php
-	echo "<table>";
+	echo '<table id="productList" >';
 	foreach ($out->list as $id => $product) {
-		echo "<tr><td>$product[title]</td><td>$product[content]</td><td><img src='$product[pic]'></td><td>edit</td></tr>";
+		echo "<tr><td>$product[title]</td><td>$product[content]</td><td><img src='$product[pic]'></td><td><a href='?page=$_GET[page]&id=$id'>edit</td></tr>";
 	}	
 	echo "</table>";
 ?>

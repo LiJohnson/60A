@@ -25,3 +25,8 @@
        -moz-box-shadow:rgb(201, 201, 201) 0px 0px 33px 5px;
             box-shadow:rgb(201, 201, 201) 0px 0px 33px 5px;
 }
+
+#product img,#productList img{
+	max-width: 300px;
+	max-height: 300px;
+}

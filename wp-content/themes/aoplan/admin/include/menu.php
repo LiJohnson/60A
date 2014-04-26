@@ -24,6 +24,8 @@ class AoplanSetting extends AoplanController{
 		$title = $titles[$name];
 		if( !is_array($title) )$title = array();
 
+		wp_enqueue_media();
+
 		$out = (object)$out;
 		echo '<div class=wrap >';
 		require( dirname(__file__).'/header.php' );
@@ -55,10 +57,19 @@ class AoplanSetting extends AoplanController{
 		$list = $this->option->get("productList",array());
 		$product = $this->getData("title,id,content,pic");
 		if( $product['title'] ){
-			var_dump($product);	
+			if($product['id'] == ''){
+				$list[] = $product;
+			}else{
+				$list[$product['id']] = $product;
+			}
+			$this->option->set("productList",$list);
 		}
 
-
+		$product = array();
+		if( isset($_GET['id']) ){
+			$product = $list[$_GET['id']];
+		}
+//$this->option->set("productList",array());
 		return $this->outPut('product' , array('list'=>$list,'product'=>$product));
 	}
 
