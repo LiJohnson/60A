@@ -7,6 +7,7 @@
 	<input type="hidden" name="name"  value="<?php echo $name;?>" />
 	<input type="text" 	 name="title" value="<?php echo $title['title'];?>" placeholder="名字"/>
 	<input type="number" name="pos"   value="<?php echo $title['pos'];?>" placeholder="排序" />
+	<a id="tip">&nbsp;</a>
 </form>
 <hr>
 		

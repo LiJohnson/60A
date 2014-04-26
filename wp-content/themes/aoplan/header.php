@@ -28,7 +28,7 @@
 
 </head>
 
-<body class="<?php sandbox_body_class() ?>">
+<body class="<?php sandbox_body_class() ?>" >
 
 <div id="wrapper" class="home-site">
 	<header class="home-header">

@@ -1052,7 +1052,7 @@ div.children {
 	padding:0 15px;
 	line-height:80px;
 }
-.home-navigation li a:hover,.home-navigation li:active a {
+.home-navigation li a:hover,.home-navigation li:active a,.home-navigation li.active a {
 	color:#963;
 }
 .home-container {
