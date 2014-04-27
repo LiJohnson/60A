@@ -66,6 +66,11 @@ class AoplanSetting extends AoplanController{
 			$this->option->set("productList",$list);
 		}
 
+		if( $_POST['delete'] && $list[$product['id']]){
+			unset( $list[$product['id']]);
+			$this->option->set("productList",$list);
+		}
+
 		$product = array();
 		if( isset($_GET['id']) ){
 			$product = $list[$_GET['id']];
@@ -144,7 +149,7 @@ class AoplanMenu{
 
 	private function addPage( $title , $callback = false ){
 		$callback = $callback ? $callback : $title;
-		add_theme_page( $title,  $title, 'edit_theme_options', $callback , array( &$this->page , $callback ) );
+		add_theme_page( $title,  'aoplan-'.$title, 'edit_theme_options', $callback , array( &$this->page , $callback ) );
 	}
 }
 

@@ -23,7 +23,9 @@
 <?php
 	echo '<table id="productList" >';
 	foreach ($out->list as $id => $product) {
-		echo "<tr><td>$product[title]</td><td>$product[content]</td><td><img src='$product[pic]'></td><td><a href='?page=$_GET[page]&id=$id'>edit</td></tr>";
+		echo "<tr><td>$product[title]</td><td>$product[content]</td><td><img src='$product[pic]'></td><td>";
+		echo "<a href='?page=$_GET[page]&id=$id'>edit</a>";
+		echo "<form method=post action='' ><input type=hidden name='id' value='$id' /><input type='submit' name='delete' value='delete' /></td></tr>";
 	}	
 	echo "</table>";
 ?>
