@@ -25,6 +25,10 @@ class AoplanOption{
 	public function destory(){
 		return delete_option($this->key);
 	}
+
+	public function exportJson(){
+		return json_encode($this->data);
+	}
 }
 
 $aoplanOption = new AoplanOption();

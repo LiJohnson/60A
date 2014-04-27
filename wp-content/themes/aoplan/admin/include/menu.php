@@ -28,7 +28,8 @@ class AoplanSetting extends AoplanController{
 
 		$out = (object)$out;
 		echo '<div class=wrap >';
-		require( dirname(__file__).'/header.php' );
+		if( $out->head !== false )
+			require( dirname(__file__).'/header.php' );
 		require( dirname(__file__).'/../'.$file.'.php' );
 		echo '</div>';
 	}
@@ -96,6 +97,10 @@ class AoplanSetting extends AoplanController{
 	public function contact(){
 		return $this->outPut('contact');
 	}
+
+	public function export(){
+		return $this->outPut("export",array('head'=>false));
+	}
 }
 
 /**
@@ -113,6 +118,7 @@ class AoplanMenu{
 		add_action( 'admin_menu', array( $this, 'gallery' ) );
 		add_action( 'admin_menu', array( $this, 'about' ) );
 		add_action( 'admin_menu', array( $this, 'contact' ) );
+		add_action( 'admin_menu', array( $this, 'export' ) );
 
 		add_action('wp_ajax_aoplanUpdateTitle', array( &$this->page , 'updateTitle' ) );
 	}
@@ -131,6 +137,9 @@ class AoplanMenu{
 
 	public function contact(){
 		$this->addPage('联系方式','contact');
+	}
+	public function export(){
+		$this->addPage("导出",'export');
 	}
 
 	private function addPage( $title , $callback = false ){
