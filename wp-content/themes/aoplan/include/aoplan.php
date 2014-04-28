@@ -29,6 +29,19 @@ class AoplanOption{
 	public function exportJson(){
 		return json_encode($this->data);
 	}
+
+	private function sortTitle($t1 , $t2){		
+		return $t1['pos'] - $t2['pos'];
+	}
+
+	public function getTitles(){
+		$titles = $this->get("titles",array());
+		foreach ($titles as $key => $value) {
+			$titles[$key]['key'] = $key;
+		}
+		usort($titles, array($this,'sortTitle'));
+		return $titles;
+	}
 }
 
 $aoplanOption = new AoplanOption();

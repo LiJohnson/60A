@@ -2,7 +2,7 @@
 class AoplanHtml{
 	function nav(){
 		global $aoplanOption;
-		$titles = $aoplanOption->get("titles",array());
+		$titles = $aoplanOption->getTitles();
 		$html = '<nav class="home-navigation top-nav nav nav-tabs animate" >';
 		foreach ($titles as $key => $title) {
 			$html .= "<li class=onetone-menuitem ><a href='#$key' >$title[title]</a></li>";

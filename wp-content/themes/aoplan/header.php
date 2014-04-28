@@ -18,10 +18,9 @@
 <!-- 
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="http://1.gtbcode.sinaapp.com/css/style.css">
 -->
 <?php wp_enqueue_script( array('jquery'));wp_head() ?>
-
+<link rel="stylesheet" href="http://1.gtbcode.sinaapp.com/css/style.css">
 <script>
 (function($){
 })(window.jQuery);

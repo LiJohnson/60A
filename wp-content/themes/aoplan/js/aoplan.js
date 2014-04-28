@@ -6,4 +6,14 @@ jQuery(function($){
 		$("body").animate({scrollTop:$content.offset().top - offset },600,'easeOutBack');
 		//return false;
 	});
+
+	//product
+	(function(){
+		var $product = $("#product");
+		$product.find(".portfolio-list li").hover(function(){
+			$(this).find(".content").show();
+		},function(){
+			$(this).find(".content").hide();
+		});
+	})();
 });

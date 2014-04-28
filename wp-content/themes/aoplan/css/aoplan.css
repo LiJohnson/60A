@@ -1,6 +1,8 @@
 .home-header{position: fixed;}
 #content{margin-top: 80px;}
 
+.hide{display: none;}
+
 /*
 for test
  */
@@ -10,3 +12,9 @@ for test
 	height:600px;
 	margin: 10px auto;
 }
+
+.portfolio-list{width: 90%;margin: 0 auto;}
+.portfolio-list li{height: 300px;overflow: hidden;}
+.portfolio-list li {position: relative; height: 300px;overflow: hidden;}
+.portfolio-list li .content{ position: absolute; bottom: 0; width: 100%;background-color: rgba(0, 0, 0, 0.76); } 
+.portfolio-list li .content h3{text-align: center;} 
