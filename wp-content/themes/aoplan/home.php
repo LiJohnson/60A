@@ -6,7 +6,7 @@
 				global $aoplanOption;
 				foreach ($aoplanOption->get("titles" , array() ) as $key => $value) {
 					echo "<div id='$key' class='aoplan-page'>";
-					var_dump($value);
+					require(dirname(__file__).'/home/'.$key.'.php');
 					echo "</div>";
 				}
 			?>

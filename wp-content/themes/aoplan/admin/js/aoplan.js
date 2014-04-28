@@ -5,9 +5,7 @@ jQuery(function($){
 		return function(){
 			timeId && clearTimeout(timeId);
 			timeId = setTimeout(function(){
-				$form.find("#tip").tip("保存中...");
 				$form.postData(ajaxurl,{action:"aoplanUpdateTitle"},function(data){
-					$.log(data);
 					$form.find("#tip").tip("保存成功");
 				});
 			},300);
@@ -23,6 +21,12 @@ jQuery(function($){
 		$.log(att.attributes.url);
 		$productForm.find("input[name=pic]").val(att.attributes.url);
 		$productForm.find("img").prop("src",att.attributes.url);
+	});
+
+	//gallery
+	var $gallery = $("form#gallery");
+	$gallery.find("input[type=button]").media(function(att){
+		$gallery.find("input[name=pic]").val(att.attributes.url);
 	});
 	
 });

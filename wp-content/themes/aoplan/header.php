@@ -14,7 +14,8 @@
 <link rel="pingback" href="<?php bloginfo('pingback_url') ?>" />
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/media.css" />
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/aoplan.css" />
-<!--
+
+<!-- 
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="http://1.gtbcode.sinaapp.com/css/style.css">
@@ -31,7 +32,7 @@
 <body class="<?php sandbox_body_class() ?>" >
 
 <div id="wrapper" class="home-site">
-	<header class="home-header">
+	<header class="home-header animate-children">
 		<div class="home-logo onetone-logo">
         	<a href="<?php echo get_option('home') ?>/" title="<?php bloginfo('name') ?>" rel="home">
                 <span class="site-name"><?php bloginfo('name'); ?> </span>
