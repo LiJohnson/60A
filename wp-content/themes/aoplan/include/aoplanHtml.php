@@ -21,7 +21,7 @@ class AoplanHtml{
 	public function productList(){
 		$html = '<ul>';
 		foreach ($this->option->get("productList",array()) as $id => $product) {
-			$html .= "<li><a href=javascript:; ><img class='port-img' src='$product[pic]'><div class='hide content'><h3>$product[title]</h3>$product[content]</div></a></li>";
+			$html .= "<li><a href='$product[pic]' target='_blank' ><img class='port-img' src='$product[pic]'><div class='hide content'><h3>$product[title]</h3>$product[content]</div></a></li>";
 		}
 		$html .= "</ul>";
 		echo $html;
