@@ -4,6 +4,7 @@
 		<div id="content">
 			<?php
 				global $aoplanOption;
+				global $aoplanHtml;
 				foreach ($aoplanOption->getTitles() as $key => $value) {
 					echo "<div id='$value[key]' class='aoplan-page'>";
 					require(dirname(__file__).'/home/'.$value['key'].'.php');
