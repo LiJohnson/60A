@@ -1,11 +1,14 @@
 jQuery(function($){
 	var offset =  80 + ($("#wpadminbar").height()||0);
+	var scrollTo = function(id){
+		var $content = $(id);
+		$content.length && $("body").animate({scrollTop:$content.offset().top - offset+5 },600, $.easing.easeOutBack ? 'easeOutBack' : 'swing');
+	};
 	$("body").scrollspy({ target: '.home-header' , offset : offset });
 	$(".home-header .nav li").click(function(){
-		var $content = $($(this).find("a").attr("href"));
-		$("body").animate({scrollTop:$content.offset().top - offset },600,'easeOutBack');
-		//return false;
+		scrollTo($(this).find("a").attr("href"));
 	});
+	location.hash && scrollTo(location.hash);
 
 	//product
 	(function(){
