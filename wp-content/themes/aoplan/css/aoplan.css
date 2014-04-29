@@ -8,8 +8,7 @@ for test
  */
 .aoplan-page{
 	width:90%;
-	background:gray;
-	height:600px;
+	background:rgba(128, 128, 128, 0.1);
 	margin: 10px auto;
 }
 
