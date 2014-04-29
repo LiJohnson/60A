@@ -7,6 +7,8 @@ jQuery(function($){
 	$("body").scrollspy({ target: '.home-header' , offset : offset });
 	$(".home-header .nav li").click(function(){
 		scrollTo($(this).find("a").attr("href"));
+	}).each(function(){
+		$(this).find("a").attr("href","#aop-"+$(this).prop("id"));
 	});
 	location.hash && scrollTo(location.hash);
 
