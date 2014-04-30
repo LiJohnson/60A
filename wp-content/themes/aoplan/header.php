@@ -21,11 +21,6 @@
 -->
 <?php wp_enqueue_script( array('jquery'));wp_head() ?>
 <link rel="stylesheet" href="http://1.gtbcode.sinaapp.com/css/style.css">
-<script>
-(function($){
-})(window.jQuery);
-</script>
-
 </head>
 
 <body class="<?php sandbox_body_class() ?>" >
@@ -39,21 +34,15 @@
         </div>
         <a class="home-navbar navbar" href="javascript:;"></a>
         <?php
-        global $aoplanHtml;
-        $aoplanHtml->nav();
-        /*
-        $titles = $aoplanOption->get("titles",array());
-        foreach ($titles as $title) {
-        	# code...
-        }
-        var_dump($titles);
-		wp_nav_menu( array(
-			"depth"=>1,
-			"container"=>"nav" ,
-			"container_class"=>"home-navigation top-nav animate",
-			"menu_class"=>"onetone-menuitem"
-			));
-			*/
+       $param = array(
+            "theme_location"=>"aoplan",
+            "depth"=>1,
+            "container"=>"nav" ,
+            "container_class"=>"home-navigation top-nav animate",
+            "menu_class"=>"onetone-menuitem"
+        );
+		wp_nav_menu($param );
 		?>
 		<div class="clear"></div>
 	</header>
+    <?php var_dump(wp_get_nav_menu_items('aolpan',$param));?>

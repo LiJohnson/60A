@@ -18,6 +18,8 @@ class AoplanMenu{
 		add_action( 'admin_menu', array( $this, 'export' ) );
 
 		add_action('wp_ajax_aoplanUpdateTitle', array( &$this->page , 'updateTitle' ) );
+
+		register_nav_menu('aolpan','aolpan');
 	}
 
 	public function product(){
