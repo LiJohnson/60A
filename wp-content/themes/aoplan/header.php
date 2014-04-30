@@ -34,12 +34,13 @@
         </div>
         <a class="home-navbar navbar" href="javascript:;"></a>
         <?php
-		wp_nav_menu( array(
-			"depth"=>1,
-			"container"=>"nav" ,
-			"container_class"=>"home-navigation nav nav-tabs top-nav animate",
-			"menu_class"=>"onetone-menuitem"
-			));
+       $param = array(
+            "theme_location"=>"aoplan",
+            "depth"=>1,
+            "container"=>"nav" ,
+            "container_class"=>"home-navigation top-nav animate",
+            "menu_class"=>"onetone-menuitem"
+        );
+		wp_nav_menu($param );
 		?>
 		<div class="clear"></div>
-	</header>
