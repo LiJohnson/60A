@@ -2,7 +2,7 @@
 Theme Name: onetone
 Theme URI: http://www.mageewp.com/onetone-theme.html
 Description: Onetone is a one-page responsive business theme based on HTML5/CSS3. All required information are displayed on a single page with clear order according to users’ preferences. The basic sections designed for business purpose have already been built for you. There’s also an extensive admin panel where unlimited sections can be easily added. Multiple options are available if you prefer to do some adjustments,such as changing background, video background, Font Awesome Icons, uploading logo and favicon,adding custom CSS and so on.
-Version: 1.1.4
+Version: 1.1.6
 Author: MageeWP
 Author URI: http://www.mageewp.com
 License: GNU General Public License
@@ -1466,6 +1466,31 @@ i.fa-5 {
 }
 i.fa-6 {
     font-size: 20em;
+}
+
+/** background video**/
+
+#video-controls {
+    width: 333px;
+}
+#video-controls i.fa{
+	font-size:20px;
+	vertical-align: middle;
+	}
+#video-controls i.fa-volume-up {
+	font-size:22px;
+	}
+#video-controls i.fa-volume-off {
+	font-size:25px;
+	}
+.black-65 {
+    color: #FFFFFF;
+    margin: 24px 0;
+    padding: 4px 12px;
+	left: 20px;
+	bottom: 0;
+	position: absolute;
+	z-index:999;
 }
 /* =Responsive-------------------------------------------------------------- *//* Maximum width of 600 pixels. */
 @media screen and (max-width:600px) {

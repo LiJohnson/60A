@@ -1,4 +1,4 @@
-AOPLAN THEME FOR WORDPRESS 
+AOPLAN THEME FOR WORDPRESS
 ======
 
 DONE
@@ -7,6 +7,7 @@ DONE
 - head.php
 - style.css	
 - footer.php
+- index.php
 
 TO DO
 -------
@@ -20,7 +21,6 @@ TO DO
 - functions.php
 - home.php
 - image.php
-- index.php
 - links.php
 - screenshot.png	
 - search.php

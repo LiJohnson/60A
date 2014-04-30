@@ -263,6 +263,8 @@ feugiat quis ultrices tristique, rhoncus eu leo. In eu quam lacus. dear Praesent
 		$options[] = array('name' => sprintf(__('Section %s', 'onetone'),($i+1)),'id' => 'slide_group_start_'.$i.'','type' => 'start_group','class'=>'group_close');
 		$options[] = array('name' => __('Section Title', 'onetone'),'id' => 'section_title_'.$i.'','type' => 'text','std'=>$section_title[$i]);
 		$options[] = array('name' => __('Menu Title', 'onetone'),'id' => 'menu_title_'.$i.'','type' => 'text','std'=>$section_menu[$i],'desc'=>'This title will display in the header menu. It is required');
+		$options[] = array('name' => __('Menu Slug', 'onetone'),'id' => 'menu_slug_'.$i.'','type' => 'text','std'=>'','desc'=>'The  "slug" is the URL-friendly version of the name. It is usually all lowercase and contains only letters, numbers, and hyphens.');
+		
 		$options[] = array('name' =>  __('Section Background', 'onetone'),'id' => 'section_background_'.$i.'','std' => $section_background[$i],'type' => 'background' );
 	    if($i == 0){
 		$options[] = array('name' => __('Section Background Video', 'onetone'),'std' => $section_background_video[$i],'desc' => __('YouTube Video ID', 'onetone'),'id' => 'section_background_video_'.$i.'',

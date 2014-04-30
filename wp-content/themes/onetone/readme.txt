@@ -52,6 +52,11 @@ Copyright: by Sean McCambridge  http://www.seanmccambridge.com/tubular
 /**********************************************************/
 
 == CHANGE LOG == 
+
+= Version 1.1.5 = 
+* Added background video controls(Play | Pause | Volume Up | Volume Down | Mute).
+* Added one page home menu slug.
+
 = Version 1.1.4 = 
 * Fixed layout issue
 

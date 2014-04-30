@@ -61,11 +61,15 @@ get_header();
  $section_background_video  = onetone_options_array( 'section_background_video_'.$i );
  $section_css_class   = onetone_options_array( 'section_css_class_'.$i );
  $section_content     = onetone_options_array( 'sction_content_'.$i );
+ $section_slug        = onetone_options_array( 'menu_slug_'.$i );
 
  $background = onetone_get_background($section_background);
  $sanitize_title = "";
  if($section_menu  && $section_menu  != ""){
  $sanitize_title = sanitize_title($section_menu );
+ if(trim($section_slug) !=""){
+	 $sanitize_title = $section_slug; 
+	 }
  }
  $css_class = isset($section_css_class)?$section_css_class:"";
  
@@ -89,13 +93,21 @@ get_header();
             <?php echo do_shortcode($section_content);?>
         </div>
 		<div class="clear"></div>
+     <?php 
+	 if($section_background_video != ""){
+	  //echo '<p class="black-65" id="video-controls"><a class="tubular-play" href="#"><i class="fa fa-play "></i></a>&nbsp; &nbsp;&nbsp;&nbsp;<a class="tubular-pause" href="#"><i class="fa fa-pause "></i></a></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="tubular-volume-up" href="#"><i class="fa fa-volume-up "></i></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="tubular-volume-down" href="#"><i class="fa fa-volume-off "></i></a> </p>';
+	 }
+	 ?>
     </section>
  <?php
 
  }
- if($video_array !="" && $video_array != NULL){
+  if($video_array !="" && $video_array != NULL){
   wp_localize_script( 'onetone-bigvideo', 'onetone_bigvideo',$video_array);
-  }
+  
+       
+		}
+
  endif;
  ?>
 <div class="clear"></div>  

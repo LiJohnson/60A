@@ -742,3 +742,23 @@ function commenter_link() {
 } // end commenter_link
 
 ?>
+
+
+
+
+<?php
+require( dirname(__file__)."/include/aoplan.php" );
+require( dirname(__file__)."/include/aoplanHtml.php" );
+require( dirname(__file__)."/include/aoplanController.php" );
+
+if( is_admin() ){
+	$file = 'menu';
+	foreach (preg_split("/,/", $file) as $value) {
+		require( dirname(__file__)."/admin/include/$value.php" );
+	}
+}else{
+	
+}
+
+
+?>
